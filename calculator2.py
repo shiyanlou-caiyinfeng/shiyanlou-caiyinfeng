@@ -23,16 +23,13 @@ def salary(gh,gz,zsgz=None):
 	else:
 		print("Parameter Error")
 	zsgz[gh]=shgz
-	for gh,shgz in zsgz.items():
-		print("{0}:{1}".format(gh,shgz))
+	print(zsgz)
 try:
 	for arg in sys.argv[1:]:	
 		gh=int(arg.split(':')[0])
 		gz=int(arg.split(':')[1])
 		salary(gh,gz)
 except  ValueError:
-	print("Parameter Error")
-except  IndexError:
 	print("Parameter Error")
 
 
