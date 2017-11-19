@@ -57,10 +57,15 @@ def salary(gh,gz,zsgz=None):
 		shgz=format(gz-ynssde*0.45+13505-jiaofei,".2f")
 	else:
 		print("Parameter Error")
-	zsgz[gh]=shgz
+	zsgz[gh]=shgz	
+	with open(sys.argv[3],'w') as file3:
+		file3.write(' ')
 	for gh,shgz in zsgz.items():
 		s="{0},{1},{2},{3},{4}".format(gh,gz,format(jiaofei,".2f"),gsje,shgz)
 		print(s)
+	
+	with open(sys.argv[3],'a') as file3:
+		file3.write(s+'\n')
 class UserData(object):
 	def __init__(self):
 		self._userdata={}
@@ -70,9 +75,7 @@ class UserData(object):
 		gz=int(b[1].strip('\n'))
 		gh=int(b[0].strip())
 		salary(gh,gz)
-	#def dumptofile(self,outputfile):
-		#with open(outputfile,'w') as file3:
-			#file3.write(self.calculator()) 
+	#def dumptofile(self,outputfile): 
 cai=UserData()
 with open(sys.argv[2]) as file2:
 	lines=file2.readlines()
