@@ -1,4 +1,6 @@
-{%extend "base.html"%}
+{%extends "base.html"%}
 {%block content%}
-    <p>{{news}}</p>
+    <p>{{news['title']}}<p>
+    <p>{{news['created_time']}}</p>
+    <p>{{news['content']}}</p>
 {%endblock%}

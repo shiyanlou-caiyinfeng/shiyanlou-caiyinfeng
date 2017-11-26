@@ -1,6 +1,8 @@
-<div>
-    <a href="http://localhost:3000/files/helloshiyanlou"><p>{{title1}</p>}</a>
-</div>
-<div>
-    <a href="http://localhost:3000/files/helloworld"><p>{{title2}}</p></a>
-</div>
+{%extends "base.html"%}
+{%block content%}
+    {%for title in titles%}
+    <a href="{{url_for('file',filename=title)}}">
+        <p>_{{title}}_<p>
+    <a>
+    {%endfor%}
+{%endblock%}
